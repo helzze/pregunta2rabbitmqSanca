@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class RabbitMQConsumer {
 
-    @RabbitListener(queues = "prueba_queue")
+    @RabbitListener(queues = "queue")
     public void consumirMensaje(String mensaje) {
-        log.info("Mensaje recibido {}, inicio de operacion", mensaje);
+        log.info("Mensaje recibido {}, inicio de operacion en concesionaria", mensaje);
     }
 
 }

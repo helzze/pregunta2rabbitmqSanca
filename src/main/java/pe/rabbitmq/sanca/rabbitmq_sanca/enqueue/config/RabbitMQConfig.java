@@ -12,17 +12,17 @@ public class RabbitMQConfig {
 
     @Bean
     public Queue queue(){
-        return new Queue("prueba_queue", true);
+        return new Queue("queue", true);
     }
 
     @Bean
     public TopicExchange exchange(){
-        return new TopicExchange("prueba_exchange");
+        return new TopicExchange("exchange");
     }
 
     @Bean
     public Binding binding(Queue queue, TopicExchange exchange){
         return BindingBuilder.bind(queue).to(exchange)
-                .with("prueba_routing");
+                .with("routing");
     }
 }

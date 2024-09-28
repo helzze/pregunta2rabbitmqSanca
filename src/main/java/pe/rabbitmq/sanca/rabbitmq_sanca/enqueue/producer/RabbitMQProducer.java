@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
 public class RabbitMQProducer {
     @Autowired
     private RabbitTemplate rabbitTemplate;
-    private static final String EXCHANGE= "prueba_exchange";
-    private static final String ROUTING_KEY= "prueba_routing";
+    private static final String EXCHANGE= "exchange";
+    private static final String ROUTING_KEY= "routing";
 
     public void enviarMensaje(String mensaje){
         rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, mensaje);
-        log.info("Mensaje construido y enviado a RabbitMQ" + mensaje);
+        log.info("Mensaje construido y enviado a RabbitMQ{}", mensaje);
     }
 }

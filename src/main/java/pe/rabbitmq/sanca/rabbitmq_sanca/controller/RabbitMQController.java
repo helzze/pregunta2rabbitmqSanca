@@ -15,6 +15,6 @@ public class RabbitMQController {
     @GetMapping("/enviar")
     public String enviarMensaje(@RequestParam String mensaje){
         rabbitMQProducer.enviarMensaje(mensaje);
-        return "Mensaje enviado a RabbitMQ: " + mensaje;
+        return "Mensaje enviado a concesionaria mediante rabbitmq: " + mensaje;
     }
 }
